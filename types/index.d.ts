@@ -115,7 +115,7 @@ declare type UpdateUserParams = {
   declare type SearchParamProps = {
     params: { id: string; type: TransformationTypeKey };
     searchParams: { [key: string]: string | string[] | undefined };
-};
+  };
   
   declare type TransformationFormProps = {
     action: "Add" | "Update";
@@ -124,7 +124,7 @@ declare type UpdateUserParams = {
     creditBalance: number;
     data?: IImage | null;
     config?: Transformations | null;
-};
+  };
   
   declare type TransformedImageProps = {
     image: any;
@@ -134,4 +134,4 @@ declare type UpdateUserParams = {
     isTransforming: boolean;
     hasDownload?: boolean;
     setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
-};
+  };
