@@ -75,15 +75,15 @@ export async function updateCredits (userId: string, creditFee: number) {
     try {
         await connectToDatabase();
 
-        const updateUserCredits = await User.findOneAndUpdate(
+        const updatedUserCredits = await User.findOneAndUpdate(
             { _id: userId }, 
             { $inc: { creditBalance: creditFee }},
             { new: true } 
         );
 
-        if(!updateUserCredits) throw new Error('User credits update failed');
+        if(!updatedUserCredits) throw new Error('User credits update failed');
 
-        return JSON.parse(JSON.stringify(updateUserCredits));
+        return JSON.parse(JSON.stringify(updatedUserCredits));
     } catch (error) {
         handleError(error);
     }
